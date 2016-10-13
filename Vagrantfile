@@ -10,9 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 2048
   end
   config.vm.define :dev do |d|
-    d.vm.network :forwarded_port, host: 8080, guest: 8080
-    d.vm.network :forwarded_port, host: 8081, guest: 8081
-    d.vm.network :forwarded_port, host: 8082, guest: 8082
+    d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.35", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
     d.vm.provision "shell", path: "bootstrap.sh"
     d.vm.provision :shell, inline: 'ansible-playbook /vagrant/ansible/dev.yml -c local -v'
     d.vm.hostname = "books-fe-polymer-dev"
