@@ -1,0 +1,12 @@
+appSim:
+  extends:
+    file: docker-compose.yml
+    service: booksFe
+nginxSim:
+  extends:
+    file: docker-compose-dev.yml
+    service: nginxDev
+booksServiceSim:
+  extends:
+    file: docker-compose-dev.yml
+    service: booksServiceDev

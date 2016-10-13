@@ -1,0 +1,6 @@
+dist:
+  image: vfarcic/books-fe-polymer-dev
+  volumes:
+    - app:/app
+    - dist:/dist
+  command: gulp
