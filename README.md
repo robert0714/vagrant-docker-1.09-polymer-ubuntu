@@ -12,13 +12,13 @@ Build Containers
 ================
 
 ```bash
-sudo docker build -t vfarcic/books-fe-polymer-dev -f Dockerfile.dev .
+sudo docker build -t 192.168.57.29:5000/books-fe-polymer-dev:v1 -f Dockerfile.dev .
     
-sudo docker push vfarcic/books-fe-polymer-dev
+sudo docker push 192.168.57.29:5000/books-fe-polymer-dev:v1
 
 sudo docker-compose -f docker-compose-build.yml run dist
 
-sudo docker build -t vfarcic/books-fe-polymer .
+sudo docker build -t 192.168.57.29:5000/books-fe-polymer:v1 .
     
 sudo docker push vfarcic/books-fe-polymer
 ```
