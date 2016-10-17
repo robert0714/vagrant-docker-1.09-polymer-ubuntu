@@ -1,5 +1,7 @@
 - hosts: localhost
   remote_user: vagrant
-  sudo: yes
+  become: yes
   roles:
-    - docker
+    - common
+    - lxc-docker
+    - docker-compose
